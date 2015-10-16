@@ -14,13 +14,13 @@ app.get('/', function(request, response) {
   response.render('pages/index');
 });
 
-// app.get('/cool', function(request, response) {
-//   var result = 'Blah';
-//   var times = process.env.TIMES || 5;
-//   for (i=0; i < 5; i++)
-//     result += cool();
-//   response.send(result);
-// });
+app.get('/cool', function(request, response) {
+  var result = ''
+  var times = process.env.TIMES || 5
+  for (i=0; i < times; i++)
+    result += cool();
+  response.send(result);
+})
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
