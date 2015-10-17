@@ -99,7 +99,7 @@ app.get('/mongodb', function (request, response) {
       console.log(err);
       response.send("Error: " + err);
     } else {
-      response.render('pages/db', {results: songs} );
+      response.render('pages/mongodb', {results: songs} );
     }
   });
 });

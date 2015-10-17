@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+<% include ../partials/nav.ejs %>
+
+<div class="container">
+<h2>Mongo Database Results</h2>
+
+    decade: '1990s',
+    artist: 'Mariah Carey',
+    song: 'One Sweet Day',
+    weeksAtOne: 16
+
+<ul>
+    <% results.forEach(function(r) { %>
+        <li><%= r.song %> - <%= r.artist %> - <%= r.decade %> - <%= r.weeksAtOne %></li>
+    <% }); %>
+</ul>
+
+</div>
+
+</body>
+</html>
