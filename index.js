@@ -59,38 +59,38 @@ var mdb = mongoose.connection;
 
 mdb.on('error', console.error.bind(console, 'connection error:'));
 
-mdb.once('open', function callback () {
+// mdb.once('open', function callback () {
 
-  // Create seed data
-  var seventies = new Song({
-    decade: '1970s',
-    artist: 'Debby Boone',
-    song: 'You Light Up My Life',
-    weeksAtOne: 10
-  });
+//   // Create seed data
+//   var seventies = new Song({
+//     decade: '1970s',
+//     artist: 'Debby Boone',
+//     song: 'You Light Up My Life',
+//     weeksAtOne: 10
+//   });
 
-  var eighties = new Song({
-    decade: '1980s',
-    artist: 'Olivia Newton-John',
-    song: 'Physical',
-    weeksAtOne: 10
-  });
+//   var eighties = new Song({
+//     decade: '1980s',
+//     artist: 'Olivia Newton-John',
+//     song: 'Physical',
+//     weeksAtOne: 10
+//   });
 
-  var nineties = new Song({
-    decade: '1990s',
-    artist: 'Mariah Carey',
-    song: 'One Sweet Day',
-    weeksAtOne: 16
-  });
+//   var nineties = new Song({
+//     decade: '1990s',
+//     artist: 'Mariah Carey',
+//     song: 'One Sweet Day',
+//     weeksAtOne: 16
+//   });
 
-  /*
-   * First we'll add a few songs. Nothing is required to create the 
-   * songs collection; it is created automatically when we insert.
-   */
-  seventies.save();
-  eighties.save();
-  nineties.save();
-});
+//   /*
+//    * First we'll add a few songs. Nothing is required to create the 
+//    * songs collection; it is created automatically when we insert.
+//    */
+//   seventies.save();
+//   eighties.save();
+//   nineties.save();
+// });
 
 app.get('/mongodb', function (request, response) {
   console.log("Mongo URI: " + mongooseUri);
