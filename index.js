@@ -53,6 +53,8 @@ var songSchema = mongoose.Schema({
 
 // Store song documents in a collection called "songs"
 var Song = mongoose.model('songs', songSchema);
+
+mongoose.connect(mongooseUri, options);
 var mdb = mongoose.connection;
 
 mdb.on('error', console.error.bind(console, 'connection error:'));
@@ -92,13 +94,12 @@ mdb.once('open', function callback () {
 
 app.get('/mongodb', function (request, response) {
   console.log("Mongo URI: " + mongooseUri);
-  mongoose.connect(mongooseUri, options);
   Song.find({}, function(err, songs){
     if(err){
       console.log(err);
-      res.send("Error: " + err);
+      response.send("Error: " + err);
     } else {
-      res.render('pages/db', {results: songs} );
+      response.render('pages/db', {results: songs} );
     }
   });
 });
