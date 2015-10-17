@@ -53,10 +53,11 @@ var songSchema = mongoose.Schema({
 
 // Store song documents in a collection called "songs"
 var Song = mongoose.model('songs', songSchema);
+var mdb = mongoose.connection;
 
-db.on('error', console.error.bind(console, 'connection error:'));
+mdb.on('error', console.error.bind(console, 'connection error:'));
 
-db.once('open', function callback () {
+mdb.once('open', function callback () {
 
   // Create seed data
   var seventies = new Song({
