@@ -11,16 +11,15 @@
 <div class="container">
 <h2>Mongo Database Results</h2>
 
-    decade: '1990s',
-    artist: 'Mariah Carey',
-    song: 'One Sweet Day',
-    weeksAtOne: 16
-
-<ul>
+<table>
+	<tr><th>Song Name</th><th>Song Artist</th><th>Song Decade</th><th>Weeks as #1</th></tr>
     <% results.forEach(function(r) { %>
-        <li><%= r.song %> - <%= r.artist %> - <%= r.decade %> - <%= r.weeksAtOne %></li>
+        <tr><td><%= r.song %></td>
+        <td><%= r.artist %></td>
+        <td><%= r.decade %></td>
+        <td><%= r.weeksAtOne %></td></tr>
     <% }); %>
-</ul>
+</table>
 
 </div>
 
