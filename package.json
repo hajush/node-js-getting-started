@@ -11,6 +11,7 @@
     "ejs": "2.3.3",
     "express": "4.13.3",
     "mongodb-uri": "^0.9.7",
+    "mongoose": "^4.1.11",
     "pg": "4.x"
   },
   "engines": {
